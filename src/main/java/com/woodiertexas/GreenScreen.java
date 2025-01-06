@@ -25,9 +25,9 @@ public class GreenScreen implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("Green Screen");
 
-	public static final Block RED_SCREEN = new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
-	public static final Block GREEN_SCREEN = new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
-	public static final Block BLUE_SCREEN = new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
+	public static final Block RED_SCREEN = new Block(Block.Settings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
+	public static final Block GREEN_SCREEN = new Block(Block.Settings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
+	public static final Block BLUE_SCREEN = new Block(Block.Settings.create().sounds(BlockSoundGroup.WOOL).strength(0.1f).luminance(value -> 15).emissiveLighting((state, getter, pos) -> true));
 
 	@Override
 	public void onInitialize() {
@@ -42,8 +42,8 @@ public class GreenScreen implements ModInitializer {
 		blocks.put(BLUE_SCREEN, "blue_screen_block");
 
 		for (Block block : blocks.keySet()) {
-			Registry.register(Registries.BLOCK, new Identifier("green_screen", blocks.get(block)), block);
-			Registry.register(Registries.ITEM, new Identifier("green_screen", blocks.get(block)),
+			Registry.register(Registries.BLOCK, Identifier.of("green_screen", blocks.get(block)), block);
+			Registry.register(Registries.ITEM, Identifier.of("green_screen", blocks.get(block)),
 				new BlockItem(block, new Item.Settings()));
 			ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL_BLOCKS).register(entries -> entries.addItem(block.asItem()));
 		}

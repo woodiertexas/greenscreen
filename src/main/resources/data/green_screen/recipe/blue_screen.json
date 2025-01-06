@@ -10,7 +10,7 @@
     }
   },
   "result": {
-    "item": "green_screen:blue_screen_block",
+    "id": "green_screen:blue_screen_block",
     "count": 1
   }
 }
