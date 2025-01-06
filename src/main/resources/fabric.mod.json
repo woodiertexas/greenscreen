@@ -1,30 +1,33 @@
 {
-  "schemaVersion": 1,
-  "id": "green_screen",
-  "version": "${version}",
-  "name": "Green Screen",
-  "description": "Chromakey blocks for easy screenshotting or video recording.",
-  "authors": [
-    "woodiertexas"
-  ],
-  "contact": {
-    "homepage": "https://modrinth.com/mod/planetarium",
-    "issues": "https://github.com/woodiertexas/planetarium/issues",
-    "sources": "https://github.com/woodiertexas/planetarium"
-  },
-  "license": "MIT",
-  "icon": "assets/green_screen/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.woodiertexas.GreenScreen"
-    ]
-  },
-  "mixins": [],
-  "depends": {
-    "fabricloader": ">=0.16.9",
-    "minecraft": ["1.21", "1.21.1"],
-    "java": ">=21",
-    "fabric-api": "*"
-  }
+	"schemaVersion": 1,
+	"id": "green_screen",
+	"version": "${version}",
+	"name": "Green Screen",
+	"description": "Chromakey blocks for easy screenshotting or video recording.",
+	"authors": [
+		"woodiertexas"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/planetarium",
+		"issues": "https://github.com/woodiertexas/planetarium/issues",
+		"sources": "https://github.com/woodiertexas/planetarium"
+	},
+	"license": "MIT",
+	"icon": "assets/green_screen/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.woodiertexas.GreenScreen"
+		],
+		"fabric-datagen": [
+			"com.woodiertexas.GreenScreenDataGen"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": ["1.21.4"],
+		"java": ">=21",
+		"fabric-api": "*"
+	}
 }
