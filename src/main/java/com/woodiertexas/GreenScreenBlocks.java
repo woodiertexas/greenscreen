@@ -36,7 +36,7 @@ public class GreenScreenBlocks {
 	
 	public static Block registerBlockWithItem(String id, AbstractBlock.Settings settings) {
 		Block block = registerBlock(id, Block::new, settings);
-		registerItem("somehow_get_block_id", Item::new, new Item.Settings().rarity(Rarity.COMMON));
+		registerItem(id, Item::new, new Item.Settings().rarity(Rarity.COMMON));
 		return block;
 	}
 	
@@ -44,5 +44,6 @@ public class GreenScreenBlocks {
 		
 	}
 	
-	public static final Block RED_SCREEN = registerBlockWithItem("green_screen_block", AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL));
+	public static final Block RED_SCREEN = registerBlockWithItem("red_screen_block", AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL));
 }
+
