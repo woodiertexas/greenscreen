@@ -24,7 +24,7 @@ public class GreenScreenBlocks {
 	}
 	
 	public static Item registerItem(String id, Function<Item.Settings, Item> factory, Item.Settings settings) {
-		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.ofDefault(id));
+		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(GreenScreen.MOD_ID, id));
 		Item item = factory.apply(settings.key(itemKey));
 		
 		if (item instanceof BlockItem blockItem) {
@@ -34,10 +34,15 @@ public class GreenScreenBlocks {
 		return Registry.register(Registries.ITEM, itemKey, item);
 	}
 	
-	//public static Block, Item registerBlockWithItem() {
-	//	
-	//}
+	public static Block registerBlockWithItem(String id, AbstractBlock.Settings settings) {
+		Block block = registerBlock(id, Block::new, settings);
+		registerItem("somehow_get_block_id", Item::new, new Item.Settings().rarity(Rarity.COMMON));
+		return block;
+	}
 	
-	public static final Block RED_SCREEN = registerBlock("green_screen_block", Block::new, AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL));
-	public static final Item RED_SCREEN_ITEM = registerItem(String.valueOf(RED_SCREEN.asItem()), Item::new, new Item.Settings().rarity(Rarity.COMMON));
+	public static void init() {
+		
+	}
+	
+	public static final Block RED_SCREEN = registerBlockWithItem("green_screen_block", AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOL));
 }

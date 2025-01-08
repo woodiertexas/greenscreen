@@ -15,5 +15,7 @@ public class GreenScreen implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL_BLOCKS).register((entries) -> entries.addItem(GreenScreenBlocks.RED_SCREEN.asItem()));
 		//ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL_BLOCKS).register((entries) -> entries.addItem(GreenScreenBlocks.GREEN_SCREEN.asItem()));
 		//ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL_BLOCKS).register((entries) -> entries.addItem(GreenScreenBlocks.BLUE_SCREEN.asItem()));
+		
+		GreenScreenBlocks.init();
 	}
 }

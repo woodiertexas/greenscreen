@@ -8,9 +8,9 @@
 		"woodiertexas"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/planetarium",
-		"issues": "https://github.com/woodiertexas/planetarium/issues",
-		"sources": "https://github.com/woodiertexas/planetarium"
+		"homepage": "https://modrinth.com/mod/green-screen",
+		"issues": "https://github.com/woodiertexas/green-screen/issues",
+		"sources": "https://github.com/woodiertexas/green-screen"
 	},
 	"license": "MIT",
 	"icon": "assets/green_screen/icon.png",
